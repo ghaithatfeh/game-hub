@@ -6,10 +6,12 @@ import { Genre } from "./hooks/useGenres";
 import { useState } from "react";
 import PlatformSelector from "./components/PlatformSelector";
 import { Platform } from "./hooks/usePlatforms";
+import OrderSelector from "./components/OrderSelector";
 
 export interface GameQuery {
 	genre: Genre;
 	platform: Platform;
+	ordering: string;
 }
 
 function App() {
@@ -43,6 +45,10 @@ function App() {
 						<PlatformSelector
 							selectedPlatform={gameQuery.platform}
 							onSelectPlatform={(platform) => setGameQuery({ ...gameQuery, platform })}
+						/>
+						<OrderSelector
+							selectedOrder={gameQuery.ordering}
+							onSelectOrder={(ordering) => setGameQuery({ ...gameQuery, ordering })}
 						/>
 					</HStack>
 					<GameGride gameQuery={gameQuery} />
