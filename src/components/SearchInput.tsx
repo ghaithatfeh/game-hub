@@ -7,7 +7,7 @@ interface Props {
 
 const SearchInput = ({ onSearch }: Props) => {
 	return (
-		<InputGroup>
+		<InputGroup marginX={3}>
 			<InputLeftElement children={<BsSearch />} />
 			<Input
 				onChange={(e) => onSearch(e.target.value)}
