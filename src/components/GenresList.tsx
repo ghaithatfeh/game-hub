@@ -3,13 +3,13 @@ import useGenres from "../hooks/useGenres";
 import imageUrl from "../services/image-url";
 
 const GenresList = () => {
-	const { genres, error, isLoading } = useGenres();
+	const { data, error, isLoading } = useGenres();
 
 	if (error) return;
 	if (isLoading) return <Spinner />;
 	return (
 		<List spacing={3}>
-			{genres.map((genre) => (
+			{data.map((genre) => (
 				<ListItem key={genre.id}>
 					<HStack>
 						<Image borderRadius={8} boxSize="35px" src={imageUrl(genre.image_background)} />
