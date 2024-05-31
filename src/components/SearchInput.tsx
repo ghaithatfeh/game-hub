@@ -1,11 +1,20 @@
 import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import { BsSearch } from "react-icons/bs";
 
-const SearchInput = () => {
+interface Props {
+	onSearch: (searchQuery: string) => void;
+}
+
+const SearchInput = ({ onSearch }: Props) => {
 	return (
 		<InputGroup>
 			<InputLeftElement children={<BsSearch />} />
-			<Input borderRadius={20} placeholder="Search games..." variant="filled" />
+			<Input
+				onChange={(e) => onSearch(e.target.value)}
+				borderRadius={20}
+				placeholder="Search games..."
+				variant="filled"
+			/>
 		</InputGroup>
 	);
 };
