@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
+import ms from "ms";
 import App from "./App.tsx";
 import theme from "./theme.ts";
 import "./index.css";
@@ -10,9 +11,9 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 const queryClient = new QueryClient({
 	defaultOptions: {
 		queries: {
-			staleTime: 24 * 60 * 60 * 1000, // 24H
-		}
-	}
+			staleTime: ms("24h"),
+		},
+	},
 });
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
