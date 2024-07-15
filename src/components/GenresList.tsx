@@ -4,9 +4,9 @@ import imageUrl from "../services/image-url";
 
 interface Props {
 	onSelectGenre: (genre: Genre) => void;
-	selectedGenre: Genre | null;
+	selectedGenreId?: number;
 }
-const GenresList = ({ onSelectGenre, selectedGenre }: Props) => {
+const GenresList = ({ onSelectGenre, selectedGenreId }: Props) => {
 	const { data, error, isLoading } = useGenres();
 
 	if (error) return;
@@ -25,7 +25,7 @@ const GenresList = ({ onSelectGenre, selectedGenre }: Props) => {
 								onClick={() => onSelectGenre(genre)}
 								variant="link"
 								fontSize="lg"
-								fontWeight={selectedGenre == genre ? "bold" : "normal"}
+								fontWeight={selectedGenreId == genre.id ? "bold" : "normal"}
 							>
 								{genre.name}
 							</Button>
