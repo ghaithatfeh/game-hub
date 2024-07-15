@@ -7,7 +7,13 @@ import "./index.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+	defaultOptions: {
+		queries: {
+			staleTime: 24 * 60 * 60 * 1000, // 24H
+		}
+	}
+});
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
 	<React.StrictMode>
