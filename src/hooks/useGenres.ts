@@ -3,7 +3,7 @@ import APIClient from "../services/api-clients";
 
 const apiClient = new APIClient<Genre>("/genres");
 
-export interface Genre {
+interface Genre {
 	id: number;
 	name: string;
 	image_background: string;
