@@ -8,7 +8,9 @@ const Layout = () => {
 			<Box padding={3}>
 				<NavBar />
 			</Box>
-			<Outlet />
+			<Box padding={3}>
+				<Outlet />
+			</Box>
 		</>
 	);
 };
