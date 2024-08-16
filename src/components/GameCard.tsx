@@ -1,5 +1,5 @@
 import { Card, CardBody, HStack, Heading, Image } from "@chakra-ui/react";
-import { Game } from "../hooks/useGames";
+import { Game } from "../entities/Game";
 import PlatformIconList from "./PlatformIconList";
 import CriticScore from "./CriticScore";
 import imageUrl from "../services/image-url";
@@ -12,7 +12,7 @@ interface Props {
 const GameCard = ({ game }: Props) => {
 	return (
 		<Link to={"/games/" + game.slug}>
-			<Card overflow="hidden" _hover={{ cursor: "pointer",  }} role="group">
+			<Card overflow="hidden" _hover={{ cursor: "pointer" }} role="group">
 				<Image src={imageUrl(game.background_image)} _groupHover={{ transition: "0.3s ease-in", transform: "scale(1.05)" }} />
 				<CardBody>
 					<HStack justifyContent="space-between" marginBottom={3}>
