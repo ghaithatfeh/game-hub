@@ -4,8 +4,10 @@ import GameHeading from "../components/GameHeading";
 import GenresList from "../components/GenresList";
 import OrderSelector from "../components/OrderSelector";
 import PlatformSelector from "../components/PlatformSelector";
+import ClearFiltersButton from "../components/ClearFiltersButton";
 
 const HomePage = () => {
+	
 	return (
 		<Grid
 			templateAreas={{
@@ -27,6 +29,7 @@ const HomePage = () => {
 				<HStack marginBottom={5}>
 					<PlatformSelector />
 					<OrderSelector />
+					<ClearFiltersButton />
 				</HStack>
 				<GameGride />
 			</GridItem>
