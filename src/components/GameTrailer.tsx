@@ -20,7 +20,7 @@ const GameTrailer = ({ gameId }: Props) => {
 				poster={firstTrailer?.preview}
 				width="100%"
 				controls
-				style={{ marginBottom: "10px" }}
+				style={{ marginBottom: "12px" }}
 			/>
 		)
 	);
